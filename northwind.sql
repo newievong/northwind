@@ -43,3 +43,7 @@ MAX(quantity) AS max_quantity,
 MIN(quantity) AS min_quantity
 FROM order_details
 GROUP BY order_id;
+
+SELECT customer_id
+FROM orders
+WHERE order_id = 10290;
