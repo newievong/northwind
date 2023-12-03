@@ -47,3 +47,39 @@ GROUP BY order_id;
 SELECT customer_id
 FROM orders
 WHERE order_id = 10290;
+
+SELECT *
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;
+
+SELECT *
+FROM orders
+LEFT JOIN customers ON orders.customer_id = customers.customer_id;
+
+SELECT *
+FROM orders
+RIGHT JOIN customers ON orders.customer_id = customers.customer_id;
+
+SELECT ship_city, ship_country
+FROM orders 
+INNER JOIN employees ON orders.employee_id = employees.employee_id
+WHERE city = 'London';
+
+SELECT ship_name,orders.order_id,order_details.product_id, discontinued
+FROM order_details INNER JOIN orders ON orders.order_id = order_details.order_id
+INNER JOIN products ON order_details.product_id = products.product_id
+WHERE discontinued = 1;
+
+SELECT first_name
+FROM employees 
+WHERE reports_to  IS NULL;
+
+SELECT first_name
+FROM employees
+WHERE reports_to = 'Andrew'
+
+SELECT first_name
+FROM employees
+WHERE reports_to = 2
+
+CREATE INDEX index_customer_id ON customers (customer_id);
