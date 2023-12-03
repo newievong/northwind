@@ -76,10 +76,6 @@ WHERE reports_to  IS NULL;
 
 SELECT first_name
 FROM employees
-WHERE reports_to = 'Andrew'
-
-SELECT first_name
-FROM employees
-WHERE reports_to = 2
+WHERE reports_to = 2;
 
 CREATE INDEX index_customer_id ON customers (customer_id);
